@@ -1,6 +1,6 @@
 # Islington AIRO Club
 
-**Artificial Intelligence & Robotics Organization**
+**Artificial Intelligence & Robotics CLUB**
 
 Welcome to the official repository for the Islington AIRO Club website. This platform serves as the digital hub for our community of innovators, builders, and researchers.
 
