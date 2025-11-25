@@ -1,7 +1,4 @@
 # Islington AIRO Club Website
-
-A modern, cyberpunk-themed website for the Islington AIRO (Artificial Intelligence & Robotics Organization) Club featuring a terminal aesthetic with Matrix-inspired design.
-
 ## 🚀 Features
 
 ### Public Features
