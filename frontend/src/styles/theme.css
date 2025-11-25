@@ -1,0 +1,34 @@
+:root {
+  /* Primary Colors */
+  --matrix-black: #000000;
+  --terminal-black: #0D1117;
+  --logo-blue: #2E5A7D;
+  --logo-red: #A63C3C;
+  --logo-teal: #4FB3A9;
+  --code-green: #00FF00;
+
+  /* Secondary Colors */
+  --electric-lime: #CCFF00;
+  --cyber-green: #39FF14;
+  --dark-slate: #1A2332;
+  --terminal-gray: #333333;
+
+  /* System Colors */
+  --bright-white: #FFFFFF;
+  --console-gray: #808080;
+  --error-red: #FF0000;
+  --success-green: #00C851;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+
+  /* Borders */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+}
