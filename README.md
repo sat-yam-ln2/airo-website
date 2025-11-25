@@ -1,220 +1,62 @@
-# Islington AIRO Club Website
-## 🚀 Features
+# Islington AIRO Club
 
-### Public Features
-- **Landing Page**: Interactive hero section with matrix rain animation, mission/vision, activities grid, leadership showcase, events teaser, and statistics
-- **About Us**: Club story, objectives, leadership team, mentors section
-- **Blog**: Searchable blog posts with category filtering and detailed post views
-- **Membership Form**: Multi-step application form with validation
+**Artificial Intelligence & Robotics Organization**
 
-### Admin Features (Steering Members Only)
-- **Authentication**: Secure login system for steering members
-- **Blog Management**: Full CRUD operations for blog posts
-- **Dashboard**: Overview of all published posts with edit/delete capabilities
-- **Post Editor**: Rich text editor with Markdown support and category management
+Welcome to the official repository for the Islington AIRO Club website. This platform serves as the digital hub for our community of innovators, builders, and researchers.
 
-## 🛠 Tech Stack
+## 🤖 About the Club
 
-### Frontend
-- **React 18** with Vite
-- **React Router DOM** for navigation
-- **Axios** for API calls
-- **Framer Motion** for animations
-- **React Hook Form** for form management
-- **React Markdown** for blog content rendering
-- **Google Material Icons** for premium iconography
-- **Vanilla CSS** with CSS custom properties
+The Islington AIRO Club is a student-led initiative dedicated to exploring the frontiers of Artificial Intelligence, Robotics, and the Internet of Things (IoT). Founded in 2024, we aim to bridge the gap between theoretical knowledge and practical application.
 
-### Backend
-- **Django 5.x** with Django REST Framework
-- **SQLite3** database
-- **drf-yasg** for API documentation (Swagger)
-- **CORS Headers** for cross-origin requests
-- **Pillow** for image handling
+### Mission
+To foster a collaborative environment where students can explore, innovate, and excel in the fields of AI, Robotics, and IoT. We empower members through hands-on projects, peer learning, and industry exposure.
 
-## 📋 Prerequisites
+### Vision
+To become a leading student-led innovation hub that empowers the next generation of tech leaders to solve real-world problems using cutting-edge technologies. We envision a community where creativity meets code.
 
-- Python 3.13+
-- Node.js 16+
-- npm or yarn
+### Core Objectives
+1.  **Skill Development**: Conducting regular workshops on Python, Machine Learning, Arduino, and hardware integration.
+2.  **Innovation & Projects**: Building real-world solutions and participating in national and international competitions.
+3.  **Research & Collaboration**: Fostering a culture of research, publishing papers, and peer-to-peer knowledge sharing.
 
-## ⚙️ Installation
+## 🌟 Activities
 
-### Backend Setup
+- **Workshops**: Hands-on sessions on AI models, robotics assembly, and coding.
+- **Hackathons**: Competitive events to solve challenges under time constraints.
+- **Mentorship**: Guidance from industry experts and senior students.
+- **Research**: Deep dives into emerging tech trends and academic research.
 
-1. Navigate to the backend directory:
+## 👥 Membership & Roles
+
+The club operates with a structured membership system to ensure effective management and participation.
+
+-   **General Members**: Open to all interested students. Access to workshops, events, and resources.
+-   **Steering Members**: Core team members responsible for club management, content creation, and strategic decision-making. They have special access to the **Admin Dashboard** to manage the club's blog and announcements.
+
+## 💻 Tech Stack & Setup
+
+This website is built with a modern, performance-focused stack designed to reflect our cyberpunk aesthetic.
+
+-   **Frontend**: React 18 (Vite), Vanilla CSS (Cyberpunk Theme)
+-   **Backend**: Django 5 (REST Framework)
+-   **Database**: SQLite3
+
+### Quick Start
+
+**Backend:**
 ```bash
 cd backend
-```
-
-2. Create and activate a virtual environment:
-```bash
 python -m venv .venv
-.venv\Scripts\activate  # Windows
-```
-
-3. Install dependencies:
-```bash
-pip install django djangorestframework django-cors-headers pillow drf-yasg
-```
-
-4. Run migrations:
-```bash
-python manage.py makemigrations
-python manage.py migrate
-```
-
-5. Create a superuser (for Django admin):
-```bash
-python manage.py createsuperuser
-```
-
-6. Start the development server:
-```bash
+.venv\Scripts\activate
+pip install -r requirements.txt
 python manage.py runserver
 ```
 
-The backend will be available at `http://127.0.0.1:8000`
-
-### Frontend Setup
-
-1. Navigate to the frontend directory:
+**Frontend:**
 ```bash
 cd frontend
-```
-
-2. Install dependencies:
-```bash
 npm install
-```
-
-3. Start the development server:
-```bash
 npm run dev
 ```
 
-The frontend will be available at `http://localhost:5173`
-
-## 👥 Role-Based Access
-
-### General Members
-- Can apply for membership through the application form
-- Can view all public content (blog, about us, etc.)
-
-### Steering Members
-- Have all general member permissions
-- Can login to the admin dashboard (`/admin/login`)
-- Can create, edit, and delete blog posts
-- Can manage published content
-
-### Setting Up a Steering Member
-
-1. Access Django admin at `http://127.0.0.1:8000/admin/`
-2. Create or edit a Member
-3. Set the role to "Steering Member"
-4. Set a username
-5. Set password using Django shell:
-```python
-python manage.py shell
-from apps.members.models import Member
-member = Member.objects.get(username='your_username')
-member.set_password('your_password')
-member.save()
-```
-
-## 📚 API Documentation
-
-Access the Swagger UI at: `http://127.0.0.1:8000/swagger/`
-
-### Key Endpoints:
-- `GET /api/members/members/` - List all members
-- `POST /api/members/members/login/` - Steering member login
-- `GET /api/blog/posts/` - List all blog posts
-- `POST /api/blog/posts/` - Create post (steering members only)
-- `PUT /api/blog/posts/{id}/` - Update post (steering members only)
-- `DELETE /api/blog/posts/{id}/` - Delete post (steering members only)
-- `GET /api/core/leaders/` - List leadership team
-- `GET /api/core/events/` - List events
-
-## 🎨 Design System
-
-### Color Palette
-- **Matrix Black**: `#0D1117` - Main background
-- **Terminal Black**: `#1A2332` - Secondary background
-- **Code Green**: `#00FF41` - Primary accent
-- **Electric Lime**: `#C9F21D` - CTAs and highlights
-- **Logo Colors**: Blue (`#4A90E2`), Red (`#E74C3C`), Teal (`#1ABC9C`)
-
-### Typography
-- **Headings**: Roboto Condensed
-- **Monospace**: Roboto Mono (terminal aesthetic)
-
-## 📁 Project Structure
-
-```
-airo-website/
-├── backend/
-│   ├── apps/
-│   │   ├── members/    # Member management
-│   │   ├── blog/       # Blog posts and categories
-│   │   └── core/       # Leaders and events
-│   ├── config/         # Django settings and URLs
-│   └── manage.py
-├── frontend/
-│   ├── public/
-│   │   └── assets/     # Logo and images
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── common/      # Reusable components
-│   │   │   ├── home/        # Landing page sections
-│   │   │   ├── about/       # About page sections
-│   │   │   ├── blog/        # Blog components
-│   │   │   └── membership/  # Membership form components
-│   │   ├── pages/
-│   │   │   ├── admin/       # Steering member dashboard
-│   │   │   ├── Home.jsx
-│   │   │   ├── About.jsx
-│   │   │   ├── Blog.jsx
-│   │   │   └── BlogPost.jsx
-│   │   ├── styles/          # Global CSS
-│   │   ├── utils/           # API utilities
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   └── package.json
-└── README.md
-```
-
-## 🔒 Security Notes
-
-- Passwords are hashed using Django's `make_password`
-- CSRF protection enabled
-- CORS configured for development
-- Permission checks on all blog CRUD operations
-- For production, implement proper JWT authentication
-
-## 🚀 Deployment
-
-### Backend (Django)
-1. Set `DEBUG = False` in settings.py
-2. Configure `ALLOWED_HOSTS`
-3. Set up PostgreSQL or MySQL (recommended for production)
-4. Collect static files: `python manage.py collectstatic`
-5. Use Gunicorn/uWSGI with Nginx
-
-### Frontend (React)
-1. Build the production bundle: `npm run build`
-2. Deploy the `dist/` folder to your hosting service (Vercel, Netlify, etc.)
-3. Update API base URL in `frontend/src/utils/api.js`
-
-## 📝 License
-
-This project is created for the Islington AIRO Club.
-
-## 👨‍💻 Contributors
-
-- Developed for Islington AIRO Club
-- Mentors: Shishir Subedi, Alish KC
-
-## 📧 Contact
-
-For questions or support, contact the club at the Islington campus.
+*For detailed documentation on the API, visit `/swagger/` when the backend is running.*
